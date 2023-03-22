@@ -56,4 +56,8 @@ public class BlackBox {
         // modelName = "test"; // 불가능
         // canAutoReport = false; // 가능
     }
+
+    void appendModelName(String modelName) {
+        this.modelName += modelName; // 변수 이름이 같을 때 this 사용
+    }
 }
