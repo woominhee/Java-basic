@@ -46,7 +46,14 @@ public class BlackBox {
         System.out.println("영상은 " + min + "분 단위로 기록됩니다.");
     }
 
-    void record() {
+    void record() { // 인스턴스 메소드
         record(true, true, 5); // 메소드 안에 메소드 (메소드 오버로딩)
+    }
+
+    static void callServiceCenter() { // 클래스 메소드
+        System.out.println("서비스 센터(1588-oooo) 로 연결합니다.");
+        // static 메소드 안에서 static 으로 선언한 변수는 사용 가능, 인스턴스 변수는 사용 불가능
+        // modelName = "test"; // 불가능
+        // canAutoReport = false; // 가능
     }
 }
