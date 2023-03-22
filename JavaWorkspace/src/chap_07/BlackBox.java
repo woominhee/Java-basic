@@ -12,19 +12,19 @@ public class BlackBox {
     static boolean canAutoReport = false; // 자동 신고 기능, static 이 붙으면 클래스 변수, 모든 객체에 동일하게 적용됨
 
     BlackBox() { // 객체가 생성될 때 자동으로 호출됨
-        System.out.println("기본 생성자 호출");
-        this.serialNumber = ++counter;
-        System.out.println("새로운 시리얼 넘버를 발급받았습니다 : " + this.serialNumber);
+//        System.out.println("기본 생성자 호출");
+//        this.serialNumber = ++counter;
+//        System.out.println("새로운 시리얼 넘버를 발급받았습니다 : " + this.serialNumber);
     }
 
     BlackBox(String modelName, String resolution, int price, String color) {
-        this(); // 기본 생성자 호출, 위의 BlackBox() 를 함께 실행하고 싶을 때 사용
-
-        System.out.println("사용자 정의 생성자 호출");
-        this.modelName = modelName;
-        this.resolution = resolution;
-        this.price = price;
-        this.color = color;
+//        this(); // 기본 생성자 호출, 위의 BlackBox() 를 함께 실행하고 싶을 때 사용
+//
+//        System.out.println("사용자 정의 생성자 호출");
+//        this.modelName = modelName;
+//        this.resolution = resolution;
+//        this.price = price;
+//        this.color = color;
     }
 
     void autoReport() {
@@ -78,5 +78,46 @@ public class BlackBox {
 
     void appendModelName(String modelName) {
         this.modelName += modelName; // 변수 이름이 같을 때 this 사용
+    }
+
+    // Getter & Setter
+    String getModelName() {
+        return modelName;
+    }
+
+    void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    String getResolution() {
+        if (resolution == null || resolution.isEmpty()) {
+            return "판매자에게 문의하세요.";
+        }
+        return resolution;
+    }
+
+    void setResolution(String resolution) {
+        this.resolution = resolution;
+    }
+
+    int getPrice() {
+        return price;
+    }
+
+    void setPrice(int price) {
+        if (price < 100000) {
+            this.price = 100000;
+        }
+        else {
+            this.price = price;
+        }
+    }
+
+    String getColor() {
+        return color;
+    }
+
+    void setColor(String color) {
+        this.color = color;
     }
 }
